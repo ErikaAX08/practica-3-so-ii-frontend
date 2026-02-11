@@ -66,11 +66,15 @@ export default function MemoryBlocks({ tree, totalSize }: MemoryBlocksProps) {
                   <div className="text-white font-semibold text-xs truncate">
                     {block.process}
                   </div>
-                  <div className="text-slate-200 text-[10px]">{block.size} KB</div>
+                  <div className="text-slate-200 text-[10px]">
+                    {block.size} KB
+                  </div>
                 </div>
               )}
               {!block.process && block.size >= totalSize / 8 && (
-                <div className="text-slate-400 text-[10px]">{block.size} KB</div>
+                <div className="text-slate-400 text-[10px]">
+                  {block.size} KB
+                </div>
               )}
             </div>
           );
@@ -81,7 +85,9 @@ export default function MemoryBlocks({ tree, totalSize }: MemoryBlocksProps) {
       <div className="grid grid-cols-4 gap-2">
         <div className="text-center p-2 bg-slate-700 rounded border border-slate-600">
           <div className="text-slate-400 text-[10px] uppercase">Total</div>
-          <div className="text-slate-100 text-lg font-semibold">{blocks.length}</div>
+          <div className="text-slate-100 text-lg font-semibold">
+            {blocks.length}
+          </div>
         </div>
         <div className="text-center p-2 bg-slate-700 rounded border border-slate-600">
           <div className="text-slate-400 text-[10px] uppercase">Libres</div>
@@ -96,7 +102,9 @@ export default function MemoryBlocks({ tree, totalSize }: MemoryBlocksProps) {
           </div>
         </div>
         <div className="text-center p-2 bg-slate-700 rounded border border-slate-600">
-          <div className="text-slate-400 text-[10px] uppercase">Fragmentación</div>
+          <div className="text-slate-400 text-[10px] uppercase">
+            Fragmentación
+          </div>
           <div className="text-slate-100 text-lg font-semibold">
             {Math.round(
               (blocks.filter((b) => !b.process).length / blocks.length) * 100,
