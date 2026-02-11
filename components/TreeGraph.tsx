@@ -34,7 +34,7 @@ export default function TreeGraphAdvanced({ tree }: TreeGraphProps) {
 
   // Calculate tree dimensions
   const getTreeDimensions = useCallback(
-    (node: TreeNode | null): { depth: number; width: number } => {
+    (node: TreeNode | null | undefined): { depth: number; width: number } => {
       if (!node) return { depth: 0, width: 0 };
 
       const leftDim = getTreeDimensions(node.left);
@@ -449,7 +449,9 @@ export default function TreeGraphAdvanced({ tree }: TreeGraphProps) {
           </div>
           <div className="flex items-center gap-2">
             <span className="font-semibold">📐 Ajustar:</span>
-            <span>Usa el botón "Fit to View" para ver todo el árbol</span>
+            <span>
+              Usa el botón &quot;Fit to View&quot; para ver todo el árbol
+            </span>
           </div>
         </div>
       </div>
